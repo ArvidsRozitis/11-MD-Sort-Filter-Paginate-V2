@@ -1,3 +1,55 @@
 body {
-  background-color: antiquewhite;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
+.main {
+  color: black;
+}
+.main__heading {
+  font-size: 3rem;
+  font-weight: bolder;
+  text-align: center;
+}
+.table__container{
+  padding: 50px;  
+}
+.table__country {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.table__first-row {
+  border: 2px solid black;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 2rem; 
+}
+.table__content-row {
+  
+  height: 1.5rem;
+  transition: height 0.3s;
+
+  &--bg-lightgrey{
+    background-color: lightgrey;
+  }
+  &--bg-white{
+    background-color: white;
+  }
+
+  &:hover {
+    background-color: yellowgreen;
+    height: 2rem;
+  }
+}
+.table__content-cell {
+  vertical-align: middle;
+  text-align: left;
+  border: 1px solid rgb(110, 110, 110);
+  text-indent: 8px;
 }

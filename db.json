@@ -1,0 +1,1035 @@
+{
+    "countries": [
+      {
+        "name": "Afghanistan",
+        "code": "AF",
+        "capital": "Kabul",
+        "region": "AS",
+        "currency": {
+          "code": "AFN",
+          "name": "Afghan afghani",
+          "symbol": "؋"
+        },
+        "language": {
+          "code": "ps",
+          "name": "Pashto"
+        },
+        "flag": "https://restcountries.eu/data/afg.svg",
+        "dialling_code": "+93",
+        "isoCode": "004"
+      },
+      {
+        "name": "Albania",
+        "code": "AL",
+        "capital": "Tirana",
+        "region": "EU",
+        "currency": {
+          "code": "ALL",
+          "name": "Albanian lek",
+          "symbol": "L"
+        },
+        "language": {
+          "code": "sq",
+          "name": "Albanian"
+        },
+        "flag": "https://restcountries.eu/data/alb.svg",
+        "dialling_code": "+355",
+        "isoCode": "008"
+      },
+      {
+        "name": "Algeria",
+        "code": "DZ",
+        "capital": "Algiers",
+        "region": "AF",
+        "currency": {
+          "code": "DZD",
+          "name": "Algerian dinar",
+          "symbol": "د.ج"
+        },
+        "language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "flag": "https://restcountries.eu/data/dza.svg",
+        "dialling_code": "+213",
+        "isoCode": "012"
+      },
+      {
+        "name": "American Samoa",
+        "code": "AS",
+        "capital": "Pago Pago",
+        "region": "OC",
+        "currency": {
+          "code": "USD",
+          "name": "United State Dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/asm.svg",
+        "dialling_code": "+1",
+        "isoCode": "016"
+      },
+      {
+        "name": "Andorra",
+        "code": "AD",
+        "capital": "Andorra la Vella",
+        "region": "EU",
+        "currency": {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        },
+        "language": {
+          "code": "ca",
+          "name": "Catalan"
+        },
+        "flag": "https://restcountries.eu/data/and.svg",
+        "dialling_code": "+376",
+        "isoCode": "020"
+      },
+      {
+        "name": "Angola",
+        "code": "AO",
+        "capital": "Luanda",
+        "region": "AF",
+        "currency": {
+          "code": "AOA",
+          "name": "Angolan kwanza",
+          "symbol": "Kz"
+        },
+        "language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "flag": "https://restcountries.eu/data/ago.svg",
+        "dialling_code": "+244",
+        "isoCode": "024"
+      },
+      {
+        "name": "Anguilla",
+        "code": "AI",
+        "capital": "The Valley",
+        "region": "NA",
+        "currency": {
+          "code": "XCD",
+          "name": "East Caribbean dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/aia.svg",
+        "dialling_code": "+43",
+        "isoCode": "660"
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "code": "AG",
+        "capital": "Saint John's",
+        "region": "NA",
+        "currency": {
+          "code": "XCD",
+          "name": "East Caribbean dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/atg.svg",
+        "dialling_code": "+1",
+        "isoCode": "028"
+      },
+      {
+        "name": "Argentina",
+        "code": "AR",
+        "capital": "Buenos Aires",
+        "region": "SA",
+        "currency": {
+          "code": "ARS",
+          "name": "Argentine peso",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "flag": "https://restcountries.eu/data/arg.svg",
+        "dialling_code": "+54",
+        "isoCode": "032"
+      },
+      {
+        "name": "Armenia",
+        "code": "AM",
+        "capital": "Yerevan",
+        "region": "AS",
+        "currency": {
+          "code": "AMD",
+          "name": "Armenian dram",
+          "symbol": null
+        },
+        "language": {
+          "code": "hy",
+          "name": "Armenian"
+        },
+        "flag": "https://restcountries.eu/data/arm.svg",
+        "dialling_code": "+374",
+        "isoCode": "051"
+      },
+      {
+        "name": "Aruba",
+        "code": "AW",
+        "capital": "Oranjestad",
+        "region": "SA",
+        "currency": {
+          "code": "AWG",
+          "name": "Aruban florin",
+          "symbol": "ƒ"
+        },
+        "language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "flag": "https://restcountries.eu/data/abw.svg",
+        "dialling_code": "+297",
+        "isoCode": "533"
+      },
+      {
+        "name": "Australia",
+        "code": "AU",
+        "capital": "Canberra",
+        "region": "OC",
+        "currency": {
+          "code": "AUD",
+          "name": "Australian dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/aus.svg",
+        "dialling_code": "+61",
+        "isoCode": "036"
+      },
+      {
+        "name": "Azerbaijan",
+        "code": "AZ",
+        "capital": "Baku",
+        "region": "AS",
+        "currency": {
+          "code": "AZN",
+          "name": "Azerbaijani manat",
+          "symbol": null
+        },
+        "language": {
+          "code": "az",
+          "name": "Azerbaijani"
+        },
+        "flag": "https://restcountries.eu/data/aze.svg",
+        "dialling_code": "+994",
+        "isoCode": "031"
+      },
+      {
+        "name": "Bahamas",
+        "code": "BS",
+        "capital": "Nassau",
+        "region": "NA",
+        "currency": {
+          "code": "BSD",
+          "name": "Bahamian dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/bhs.svg",
+        "dialling_code": "+1",
+        "isoCode": "044"
+      },
+      {
+        "name": "Bahrain",
+        "code": "BH",
+        "capital": "Manama",
+        "region": "AS",
+        "currency": {
+          "code": "BHD",
+          "name": "Bahraini dinar",
+          "symbol": ".د.ب"
+        },
+        "language": {
+          "code": "ar",
+          "name": "Arabic"
+        },
+        "flag": "https://restcountries.eu/data/bhr.svg",
+        "dialling_code": "+973",
+        "isoCode": "048"
+      },
+      {
+        "name": "Bangladesh",
+        "code": "BD",
+        "capital": "Dhaka",
+        "region": "AS",
+        "currency": {
+          "code": "BDT",
+          "name": "Bangladeshi taka",
+          "symbol": "৳"
+        },
+        "language": {
+          "code": "bn",
+          "name": "Bengali"
+        },
+        "flag": "https://restcountries.eu/data/bgd.svg",
+        "dialling_code": "+880",
+        "isoCode": "050"
+      },
+      {
+        "name": "Barbados",
+        "code": "BB",
+        "capital": "Bridgetown",
+        "region": "NA",
+        "currency": {
+          "code": "BBD",
+          "name": "Barbadian dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/brb.svg",
+        "dialling_code": "+1",
+        "isoCode": "052"
+      },
+      {
+        "name": "Belarus",
+        "code": "BY",
+        "capital": "Minsk",
+        "region": "EU",
+        "currency": {
+          "code": "BYN",
+          "name": "New Belarusian ruble",
+          "symbol": "Br"
+        },
+        "language": {
+          "code": "be",
+          "name": "Belarusian"
+        },
+        "flag": "https://restcountries.eu/data/blr.svg",
+        "dialling_code": "+375",
+        "isoCode": "112"
+      },
+      {
+        "name": "Belgium",
+        "code": "BE",
+        "capital": "Brussels",
+        "region": "EU",
+        "currency": {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        },
+        "language": {
+          "code": "nl",
+          "name": "Dutch"
+        },
+        "flag": "https://restcountries.eu/data/bel.svg",
+        "dialling_code": "+32",
+        "isoCode": "056"
+      },
+      {
+        "name": "Belize",
+        "code": "BZ",
+        "capital": "Belmopan",
+        "region": "NA",
+        "currency": {
+          "code": "BZD",
+          "name": "Belize dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/blz.svg",
+        "dialling_code": "+501",
+        "isoCode": "084"
+      },
+      {
+        "name": "Benin",
+        "code": "BJ",
+        "capital": "Porto-Novo",
+        "region": "AF",
+        "currency": {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/ben.svg",
+        "dialling_code": "+229",
+        "isoCode": "204"
+      },
+      {
+        "name": "Bermuda",
+        "code": "BM",
+        "capital": "Hamilton",
+        "region": "NA",
+        "currency": {
+          "code": "BMD",
+          "name": "Bermudian dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/bmu.svg",
+        "dialling_code": "+1",
+        "isoCode": "060"
+      },
+      {
+        "name": "Bhutan",
+        "code": "BT",
+        "capital": "Thimphu",
+        "region": "AS",
+        "currency": {
+          "code": "BTN",
+          "name": "Bhutanese ngultrum",
+          "symbol": "Nu."
+        },
+        "language": {
+          "code": "dz",
+          "name": "Dzongkha"
+        },
+        "flag": "https://restcountries.eu/data/btn.svg",
+        "dialling_code": "+975",
+        "isoCode": "064"
+      },
+      {
+        "name": "Bolivia (Plurinational State of)",
+        "code": "BO",
+        "capital": "Sucre",
+        "region": "SA",
+        "currency": {
+          "code": "BOB",
+          "name": "Bolivian boliviano",
+          "symbol": "Bs."
+        },
+        "language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "flag": "https://restcountries.eu/data/bol.svg",
+        "dialling_code": "+591",
+        "isoCode": "068"
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "code": "BA",
+        "capital": "Sarajevo",
+        "region": "EU",
+        "currency": {
+          "code": "BAM",
+          "name": "Bosnia and Herzegovina convertible mark",
+          "symbol": null
+        },
+        "language": {
+          "code": "bs",
+          "name": "Bosnian"
+        },
+        "flag": "https://restcountries.eu/data/bih.svg",
+        "dialling_code": "+387",
+        "isoCode": "070"
+      },
+      {
+        "name": "Botswana",
+        "code": "BW",
+        "capital": "Gaborone",
+        "region": "AF",
+        "currency": {
+          "code": "BWP",
+          "name": "Botswana pula",
+          "symbol": "P"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/bwa.svg",
+        "dialling_code": "+267",
+        "isoCode": "072"
+      },
+      {
+        "name": "Brazil",
+        "code": "BR",
+        "capital": "Brasília",
+        "region": "SA",
+        "currency": {
+          "code": "BRL",
+          "name": "Brazilian real",
+          "symbol": "R$"
+        },
+        "language": {
+          "code": "pt",
+          "name": "Portuguese"
+        },
+        "flag": "https://restcountries.eu/data/bra.svg",
+        "dialling_code": "+55",
+        "isoCode": "076"
+      },
+      {
+        "name": "British Indian Ocean Territory",
+        "code": "IO",
+        "capital": "Diego Garcia",
+        "region": "AF",
+        "currency": {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/iot.svg",
+        "dialling_code": "+246",
+        "isoCode": "086"
+      },
+      {
+        "name": "Virgin Islands (British)",
+        "code": "VG",
+        "capital": "Road Town",
+        "region": "NA",
+        "currency": {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/vgb.svg",
+        "dialling_code": "+1",
+        "isoCode": "092"
+      },
+      {
+        "name": "Virgin Islands (U.S.)",
+        "code": "VI",
+        "capital": "Charlotte Amalie",
+        "region": "NA",
+        "currency": {
+          "code": "USD",
+          "name": "United States dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/vir.svg",
+        "dialling_code": "+1",
+        "isoCode": "850"
+      },
+      {
+        "name": "Brunei Darussalam",
+        "code": "BN",
+        "capital": "Bandar Seri Begawan",
+        "region": "AS",
+        "currency": {
+          "code": "BND",
+          "name": "Brunei dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "ms",
+          "name": "Malay"
+        },
+        "flag": "https://restcountries.eu/data/brn.svg",
+        "dialling_code": "+673",
+        "isoCode": "096"
+      },
+      {
+        "name": "Bulgaria",
+        "code": "BG",
+        "capital": "Sofia",
+        "region": "EU",
+        "currency": {
+          "code": "BGN",
+          "name": "Bulgarian lev",
+          "symbol": "лв"
+        },
+        "language": {
+          "code": "bg",
+          "name": "Bulgarian"
+        },
+        "flag": "https://restcountries.eu/data/bgr.svg",
+        "dialling_code": "+359",
+        "isoCode": "100"
+      },
+      {
+        "name": "Burkina Faso",
+        "code": "BF",
+        "capital": "Ouagadougou",
+        "region": "AF",
+        "currency": {
+          "code": "XOF",
+          "name": "West African CFA franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/bfa.svg",
+        "dialling_code": "+226",
+        "isoCode": "854"
+      },
+      {
+        "name": "Burundi",
+        "code": "BI",
+        "capital": "Bujumbura",
+        "region": "AF",
+        "currency": {
+          "code": "BIF",
+          "name": "Burundian franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/bdi.svg",
+        "dialling_code": "+257",
+        "isoCode": "108"
+      },
+      {
+        "name": "Cambodia",
+        "code": "KH",
+        "capital": "Phnom Penh",
+        "region": "AS",
+        "currency": {
+          "code": "KHR",
+          "name": "Cambodian riel",
+          "symbol": "៛"
+        },
+        "language": {
+          "code": "km",
+          "name": "Khmer"
+        },
+        "flag": "https://restcountries.eu/data/khm.svg",
+        "dialling_code": "+855",
+        "isoCode": "116"
+      },
+      {
+        "name": "Cameroon",
+        "code": "CM",
+        "capital": "Yaoundé",
+        "region": "AF",
+        "currency": {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/cmr.svg",
+        "dialling_code": "+237",
+        "isoCode": "120"
+      },
+      {
+        "name": "Canada",
+        "code": "CA",
+        "capital": "Ottawa",
+        "region": "NA",
+        "currency": {
+          "code": "CAD",
+          "name": "Canadian dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/can.svg",
+        "dialling_code": "+1",
+        "isoCode": "124"
+      },
+      {
+        "name": "Cabo Verde",
+        "code": "CV",
+        "capital": "Praia",
+        "region": "AF",
+        "currency": {
+          "code": "CVE",
+          "name": "Cape Verdean escudo",
+          "symbol": "Esc"
+        },
+        "language": {
+          "code": "pt",
+          "iso639_2": "por",
+          "name": "Portuguese",
+          "nativeName": "Português"
+        },
+        "flag": "https://restcountries.eu/data/cpv.svg",
+        "dialling_code": "+238",
+        "isoCode": "132"
+      },
+      {
+        "name": "Cayman Islands",
+        "code": "KY",
+        "capital": "George Town",
+        "region": "NA",
+        "demonym": "Caymanian",
+        "currency": {
+          "code": "KYD",
+          "name": "Cayman Islands dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/cym.svg",
+        "dialling_code": "+1",
+        "isoCode": "136"
+      },
+      {
+        "name": "Central African Republic",
+        "code": "CF",
+        "capital": "Bangui",
+        "region": "AF",
+        "currency": {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/caf.svg",
+        "dialling_code": "+236",
+        "isoCode": "140"
+      },
+      {
+        "name": "Central African Republic",
+        "code": "CF",
+        "capital": "Bangui",
+        "region": "AF",
+        "currency": {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/caf.svg",
+        "dialling_code": "+236",
+        "isoCode": "140"
+      },
+      {
+        "name": "Chile",
+        "code": "CL",
+        "capital": "Santiago",
+        "region": "SA",
+        "currency": {
+          "code": "CLP",
+          "name": "Chilean peso",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "es",
+          "iso639_2": "spa",
+          "name": "Spanish",
+          "nativeName": "Español"
+        },
+        "flag": "https://restcountries.eu/data/chl.svg",
+        "dialling_code": "+56",
+        "isoCode": "152"
+      },
+      {
+        "name": "China",
+        "code": "CN",
+        "capital": "Beijing",
+        "region": "AS",
+        "currency": {
+          "code": "CNY",
+          "name": "Chinese yuan",
+          "symbol": "¥"
+        },
+        "language": {
+          "code": "zh",
+          "name": "Chinese"
+        },
+        "flag": "https://restcountries.eu/data/chn.svg",
+        "dialling_code": "+86",
+        "isoCode": "156"
+      },
+      {
+        "name": "Colombia",
+        "code": "CO",
+        "capital": "Bogotá",
+        "region": "SA",
+        "currency": {
+          "code": "COP",
+          "name": "Colombian peso",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "flag": "https://restcountries.eu/data/col.svg",
+        "dialling_code": "+57",
+        "isoCode": "170"
+      },
+      {
+        "name": "Comoros",
+        "code": "KM",
+        "capital": "Moroni",
+        "region": "AF",
+        "currency": {
+          "code": "KMF",
+          "name": "Comorian franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/com.svg",
+        "dialling_code": "+269",
+        "isoCode": "174"
+      },
+      {
+        "name": "Congo",
+        "code": "CG",
+        "capital": "Brazzaville",
+        "region": "AF",
+        "currency": {
+          "code": "XAF",
+          "name": "Central African CFA franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/cog.svg",
+        "dialling_code": "+242",
+        "isoCode": "178"
+      },
+      {
+        "name": "Congo (Democratic Republic of the)",
+        "code": "CD",
+        "capital": "Kinshasa",
+        "region": "AF",
+        "currency": {
+          "code": "CDF",
+          "name": "Congolese franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/cod.svg",
+        "dialling_code": "+243",
+        "isoCode": "180"
+      },
+      {
+        "name": "Cook Islands",
+        "code": "CK",
+        "capital": "Avarua",
+        "region": "OC",
+        "currency": {
+          "code": "NZD",
+          "name": "New Zealand dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/cok.svg",
+        "dialling_code": "+682",
+        "isoCode": "184"
+      },
+      {
+        "name": "Costa Rica",
+        "code": "CR",
+        "capital": "San José",
+        "region": "NA",
+        "currency": {
+          "code": "CRC",
+          "name": "Costa Rican colón",
+          "symbol": "₡"
+        },
+        "language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "flag": "https://restcountries.eu/data/cri.svg",
+        "dialling_code": "+506",
+        "isoCode": "188"
+      },
+      {
+        "name": "Croatia",
+        "code": "HR",
+        "capital": "Zagreb",
+        "region": "EU",
+        "currency": {
+          "code": "HRK",
+          "name": "Croatian kuna",
+          "symbol": "kn"
+        },
+        "language": {
+          "code": "hr",
+          "name": "Croatian"
+        },
+        "flag": "https://restcountries.eu/data/hrv.svg",
+        "dialling_code": "+385",
+        "isoCode": "191"
+      },
+      {
+        "name": "Cuba",
+        "code": "CU",
+        "capital": "Havana",
+        "region": "NA",
+        "currency": {
+          "code": "CUC",
+          "name": "Cuban convertible peso",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "flag": "https://restcountries.eu/data/cub.svg",
+        "dialling_code": "+53",
+        "isoCode": "192"
+      },
+      {
+        "name": "Cuba",
+        "code": "CU",
+        "capital": "Havana",
+        "region": "NA",
+        "currency": {
+          "code": "CUC",
+          "name": "Cuban convertible peso",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "es",
+          "name": "Spanish"
+        },
+        "flag": "https://restcountries.eu/data/cub.svg",
+        "dialling_code": "+53",
+        "isoCode": "192"
+      },
+      {
+        "name": "Cyprus",
+        "code": "CY",
+        "capital": "Nicosia",
+        "region": "EU",
+        "currency": {
+          "code": "EUR",
+          "name": "Euro",
+          "symbol": "€"
+        },
+        "language": {
+          "code": "tr",
+          "name": "Turkish"
+        },
+        "flag": "https://restcountries.eu/data/cyp.svg",
+        "dialling_code": "+357",
+        "isoCode": "196"
+      },
+      {
+        "name": "Czech Republic",
+        "code": "CZ",
+        "capital": "Prague",
+        "region": "EU",
+        "currency": {
+          "code": "CZK",
+          "name": "Czech koruna",
+          "symbol": "Kč"
+        },
+        "language": {
+          "code": "cs",
+          "name": "Czech"
+        },
+        "flag": "https://restcountries.eu/data/cze.svg",
+        "dialling_code": "+420",
+        "isoCode": "203"
+      },
+      {
+        "name": "Denmark",
+        "code": "DK",
+        "capital": "Copenhagen",
+        "region": "EU",
+        "currency": {
+          "code": "DKK",
+          "name": "Danish krone",
+          "symbol": "kr"
+        },
+        "language": {
+          "code": "da",
+          "name": "Danish"
+        },
+        "flag": "https://restcountries.eu/data/dnk.svg",
+        "dialling_code": "+45",
+        "isoCode": "208"
+      },
+      {
+        "name": "Djibouti",
+        "code": "DJ",
+        "capital": "Djibouti",
+        "region": "AF",
+        "currency": {
+          "code": "DJF",
+          "name": "Djiboutian franc",
+          "symbol": "Fr"
+        },
+        "language": {
+          "code": "fr",
+          "name": "French"
+        },
+        "flag": "https://restcountries.eu/data/dji.svg",
+        "dialling_code": "+253",
+        "isoCode": "262"
+      },
+      {
+        "name": "Dominica",
+        "code": "DM",
+        "capital": "Roseau",
+        "region": "NA",
+        "currency": {
+          "code": "XCD",
+          "name": "East Caribbean dollar",
+          "symbol": "$"
+        },
+        "language": {
+          "code": "en",
+          "name": "English"
+        },
+        "flag": "https://restcountries.eu/data/dma.svg",
+        "dialling_code": "+1",
+        "isoCode": "212"
+      }
+    ]
+  }
