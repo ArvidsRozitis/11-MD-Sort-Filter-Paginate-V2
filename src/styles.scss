@@ -24,11 +24,12 @@ body {
   border: 1px solid black;
   border-collapse: collapse;
 }
-.table__first-row {
+.table__head-row {
   border: 2px solid black;
   font-size: 1.25rem;
   font-weight: bold;
-  line-height: 2rem; 
+  line-height: 2rem;
+  cursor: pointer; 
 }
 .table__content-row {
   
@@ -45,6 +46,7 @@ body {
   &:hover {
     background-color: yellowgreen;
     height: 2rem;
+    font-weight: bold;
   }
 }
 .table__content-cell {

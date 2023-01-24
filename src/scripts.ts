@@ -1,3 +1,12 @@
+/* eslint-disable no-empty */
+/* eslint-disable no-plusplus */
+/* eslint-disable space-before-blocks */
+/* eslint-disable padded-blocks */
+/* eslint-disable no-use-before-define */
+/* eslint-disable indent */
+/* eslint-disable semi */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-multiple-empty-lines */
 import axios from 'axios';
 
 interface Country {
@@ -19,32 +28,95 @@ interface Country {
   };
 }
 
-axios.get<Country[]>('http://localhost:3004/countries').then(({ data }) => {
-  // eslint-disable-next-line no-use-before-define
-  showCountries(data);
-});
+const tableContent = document.querySelector('.js-country-table-content');
+const clearTable = () => {
+  tableContent.innerHTML = ''
+}
 
-const showCountries = (countries: Country[]) => {
-  const contriesTable = document.querySelector('.js-country-table');
 
-  countries.forEach((country, i) => {
-    let contentRowStyle = 'table__content-row--bg-lightgrey';
-    if (i % 2 === 0) {
-      contentRowStyle = 'table__content-row--bg-lightgrey';
+// axios.get<Country[]>('http://localhost:3004/countries').then(({ data }) => { 
+//   creatRow(data)
+// });
+
+// const creatRow = (countries:Country[]) => {
+//   countries.forEach((country, i) => {
+//     let rowClass = i % 2 == 0 ? "table__content-row--bg-lightgrey": "table__content-row--bg-white"
+
+//     const row = document.createElement("tr");
+//     row.classList.add('table__content-row', rowClass);
+
+//     const cell1 = document.createElement('th');
+//     cell1.classList.add('table__content-cell');
+//     cell1.innerText = country.name
+//     row.appendChild(cell1)
+    
+//     const cell2 = document.createElement('th');
+//     cell2.classList.add('table__content-cell');
+//     cell2.innerText = country.capital
+//     row.appendChild(cell2)
+    
+//     const cell3 = document.createElement('th');
+//     cell3.classList.add('table__content-cell');
+//     cell3.innerText = country.currency.name
+//     row.appendChild(cell3)
+    
+//     const cell4 = document.createElement('th');
+//     cell4.classList.add('table__content-cell');
+//     cell4.innerText = country.language.name
+//     row.appendChild(cell4)
+    
+//     tableContent.appendChild(row)
+//   })
+// }
+
+const sortByCountry = document.querySelector('.js-sort-by-country')
+sortByCountry.addEventListener ('click', () => {
+  axios.get<Country[]>('http://localhost:3004/countries').then(({ data }) => {
+    const sortTo = document.querySelector(".js-sort-by-country")
+    if (sortTo.classList.contains('sorted')) {
+      data.sort((a,b) => {
+        sortTo.classList.remove('sorted')
+        return a.name > b.name ? -1 : a.name > b.name ? 1 : 0;
+      })
     } else {
-      contentRowStyle = 'table__content-row--bg-white';
+      sortTo.classList.add('sorted')
+      data.sort((a,b) => {
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+      })
     }
 
-    const countryRow = document.createElement('tr');
-    countryRow.classList.add('table__content-row', contentRowStyle);
+    clearTable()
 
-    countryRow.innerHTML = `
-        <th class="table__content-cell">${country.name}</th>
-        <th class="table__content-cell">${country.capital}</th>
-        <th class="table__content-cell">${country.currency.name}</th>
-        <th class="table__content-cell">${country.language.name}</th>
-        `;
-
-    contriesTable.appendChild(countryRow);
+    data.forEach((country, i) => {
+      let rowClass = i % 2 == 0 ? "table__content-row--bg-lightgrey": "table__content-row--bg-white"
+    
+      const row = document.createElement("tr");
+      row.classList.add('table__content-row', rowClass);
+    
+      const cell1 = document.createElement('th');
+      cell1.classList.add('table__content-cell');
+      cell1.innerText = country.name
+      row.appendChild(cell1)
+      
+      const cell2 = document.createElement('th');
+      cell2.classList.add('table__content-cell');
+      cell2.innerText = country.capital
+      row.appendChild(cell2)
+      
+      const cell3 = document.createElement('th');
+      cell3.classList.add('table__content-cell');
+      cell3.innerText = country.currency.name
+      row.appendChild(cell3)
+      
+      const cell4 = document.createElement('th');
+      cell4.classList.add('table__content-cell');
+      cell4.innerText = country.language.name
+      row.appendChild(cell4)
+      
+      tableContent.appendChild(row)
+    })   
   });
-};
+})
+
+
+
