@@ -19,7 +19,7 @@ interface Country {
 
 const tableContent = document.querySelector('.js-country-table-content');
 
-const createContry= (data: Country[]) => {
+const createContryRow= (data: Country[]) => {
     data.forEach((country, i) => {
       let rowClass = i % 2 == 0 ? "table__content-row--bg-lightgrey": "table__content-row--bg-white"
     
@@ -50,6 +50,6 @@ const createContry= (data: Country[]) => {
     })
   }
 
-  export {createContry}
+  export {createContryRow}
   
   
