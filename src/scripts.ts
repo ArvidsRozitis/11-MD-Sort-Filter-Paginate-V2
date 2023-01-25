@@ -3,7 +3,7 @@ import { Country } from "./assets/modules/interfaces";
 import { createContryRow } from "./assets/modules/create-rows";
 import { clearTable } from "./assets/modules/clear-table";
 
-// 1= kā importētinterfaces ieks moduļa
+// 1 = kā importētinterfaces iekš moduļa
 
 // paņemam datus
 //ja datus vajag sakārtot, tad tos sakārto
@@ -45,28 +45,32 @@ setPage.forEach((page) => {
 const filterBy = document.querySelectorAll('.js-filter')
 filterBy.forEach((inputfield: HTMLInputElement) => {
   inputfield.addEventListener('input', (event) => {
+    if(inputfield.value.length === 0){
+      console.log('notīrīts');
+      diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
+    }
     if (inputfield.value.length < 3) {
       event.preventDefault();
-  } else{
-    let filterColumn = 'name'
-    console.log(inputfield.value)
+    } else{
+      let filterColumn = 'name'
+      console.log(inputfield.value)
 
-    if(inputfield.classList.contains('js-filter-country-name')) {
-      filterColumn = 'name'      
-    } else if(inputfield.classList.contains('js-filter-country-capital')) {
-      filterColumn = 'capital'
-    } else if(inputfield.classList.contains('js-filter-country-currency-name')) {
-      filterColumn = 'currency.name'
-    } else if(inputfield.classList.contains('js-filter-country-language-name')){
-      filterColumn = 'language.name'
+      if(inputfield.classList.contains('js-filter-country-name')) {
+        filterColumn = 'name'      
+      } else if(inputfield.classList.contains('js-filter-country-capital')) {
+        filterColumn = 'capital'
+      } else if(inputfield.classList.contains('js-filter-country-currency-name')) {
+        filterColumn = 'currency.name'
+      } else if(inputfield.classList.contains('js-filter-country-language-name')){
+        filterColumn = 'language.name'
 
+      }
+      axios.get<Country[]>(`http://localhost:3004/countries?${filterColumn}_like=${inputfield.value}`).then(({ data }) => {
+        console.log(data)
+        clearTable()
+        createContryRow(data)    
+      })
     }
-    axios.get<Country[]>(`http://localhost:3004/countries?${filterColumn}_like=${inputfield.value}`).then(({ data }) => {
-      console.log(data)
-    })
-    clearTable()
-    diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
-  }
   })
 })
 
@@ -74,9 +78,6 @@ filterBy.forEach((inputfield: HTMLInputElement) => {
 const diplayTable = (page: number, rows: number, sortBy: string, sortOrder: string) => {
   axios.get<Country[]>(`http://localhost:3004/countries?_page=${page}&_limit=${rows}&_sort=${sortBy}&_order=${sortOrder}`).then(({ data }) => {
     createContryRow(data)
-
-
-    
   })
 };
 //pirmā ielāde
