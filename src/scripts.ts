@@ -1,36 +1,26 @@
-/* eslint-disable no-empty */
-/* eslint-disable no-plusplus */
-/* eslint-disable space-before-blocks */
-/* eslint-disable padded-blocks */
-/* eslint-disable no-use-before-define */
-/* eslint-disable indent */
-/* eslint-disable semi */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-multiple-empty-lines */
 import axios from 'axios';
+import  {sortByCountry, sortByCapital , sortByCurrencyName, sortByLanguageName} from './assets/modules/sort-functions';
+import { Country } from './assets/modules/interfaces';
 
-interface Country {
-  name: string;
-  code: string;
-  capital: string;
-  region: string;
-  currency: {
-    code: string;
-    name: string;
-    symbol: string;
-    flag: string;
-    dialling_code: string;
-    isoCode: string;
-  };
-  language: {
-    code: string;
-    name: string;
-  };
-}
+
+// 1= kā importētinterfaces ieks moduļa
+
+// paņemam datus
+//ja datus vajag sakārtot, tad tos sakārto
+//ja search laukā tiek ierakstīts kaut kas jāsāk pēc atiecīgajiem parametriem filtrēt datus
+//jāpaņem dati attiecībā no lapas no līdz
+//jāparāda rezultāts
+
+axios.get<Country[]>('http://localhost:3004/countries').then(({data}) =>{
+  console.log(data)
+  sortTable();
+});
+
 
 const tableContent = document.querySelector('.js-country-table-content');
 const clearTable = () => {
-  tableContent.innerHTML = ''
+  const tableToClear = document.querySelector('.js-country-table-content');
+  tableToClear.innerHTML = ''
 }
 
 
@@ -69,54 +59,66 @@ const clearTable = () => {
 //   })
 // }
 
-const sortByCountry = document.querySelector('.js-sort-by-country')
-sortByCountry.addEventListener ('click', () => {
-  axios.get<Country[]>('http://localhost:3004/countries').then(({ data }) => {
-    const sortTo = document.querySelector(".js-sort-by-country")
-    if (sortTo.classList.contains('sorted')) {
-      data.sort((a,b) => {
-        sortTo.classList.remove('sorted')
-        return a.name > b.name ? -1 : a.name > b.name ? 1 : 0;
+const sortTable = () => {
+  //select all buttons
+  const sortBy = document.querySelectorAll('.js-sort')
+
+  //see which button is pressed 
+  sortBy.forEach((button: HTMLButtonElement) => {
+    button.addEventListener('click', () => {
+
+       //when presed get data
+      axios.get<Country[]>('http://localhost:3004/countries').then(({ data }) => {
+
+        //when sort by countr is pressed
+        if(button.id === 'country') {
+          console.log("country is presed")
+          sortByCountry(button, data)
+        } else if(button.id === 'capital') {
+          console.log("capital is presed")
+          sortByCapital(button, data)        
+        } else if(button.id === 'currency.name') {
+          console.log("currency.name is presed")
+          sortByCurrencyName(button, data) 
+        } else if(button.id === 'language.name') {
+          console.log("language.name is presed")        
+          sortByLanguageName(button, data)        
+        }        
+             
+        //when sorted, clear previous table
+        clearTable()
+
+        //draw new table  
+        data.forEach((country, i) => {
+          let rowClass = i % 2 == 0 ? "table__content-row--bg-lightgrey": "table__content-row--bg-white"
+        
+          const row = document.createElement("tr");
+          row.classList.add('table__content-row', rowClass);
+        
+          let cell = document.createElement('th');
+          cell.classList.add('table__content-cell');
+          cell.innerText = country.name;
+          row.appendChild(cell);
+  
+          cell = document.createElement('th');
+          cell.classList.add('table__content-cell');
+          cell.innerText = country.capital;
+          row.appendChild(cell);
+  
+          cell = document.createElement('th');
+          cell.classList.add('table__content-cell');
+          cell.innerText = country.currency.name;
+          row.appendChild(cell);
+  
+          cell = document.createElement('th');
+          cell.classList.add('table__content-cell');
+          cell.innerText = country.language.name;
+          row.appendChild(cell);
+  
+          tableContent.appendChild(row)
+        })         
       })
-    } else {
-      sortTo.classList.add('sorted')
-      data.sort((a,b) => {
-        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
-      })
-    }
-
-    clearTable()
-
-    data.forEach((country, i) => {
-      let rowClass = i % 2 == 0 ? "table__content-row--bg-lightgrey": "table__content-row--bg-white"
-    
-      const row = document.createElement("tr");
-      row.classList.add('table__content-row', rowClass);
-    
-      const cell1 = document.createElement('th');
-      cell1.classList.add('table__content-cell');
-      cell1.innerText = country.name
-      row.appendChild(cell1)
-      
-      const cell2 = document.createElement('th');
-      cell2.classList.add('table__content-cell');
-      cell2.innerText = country.capital
-      row.appendChild(cell2)
-      
-      const cell3 = document.createElement('th');
-      cell3.classList.add('table__content-cell');
-      cell3.innerText = country.currency.name
-      row.appendChild(cell3)
-      
-      const cell4 = document.createElement('th');
-      cell4.classList.add('table__content-cell');
-      cell4.innerText = country.language.name
-      row.appendChild(cell4)
-      
-      tableContent.appendChild(row)
-    })   
-  });
-})
-
-
-
+    })
+  })
+}
+ 
