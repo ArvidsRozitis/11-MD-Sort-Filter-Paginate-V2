@@ -5,14 +5,10 @@ import { clearTable } from "./assets/modules/clear-table";
 
 // 1 = kā importētinterfaces iekš moduļa
 
-// paņemam datus
-//ja datus vajag sakārtot, tad tos sakārto
-//ja search laukā tiek ierakstīts kaut kas jāsāk pēc atiecīgajiem parametriem filtrēt datus
-//jāpaņem dati attiecībā no lapas no līdz
-//jāparāda rezultāts
 
 
 
+//------------kārtošana
 const sortBy = document.querySelectorAll('.js-sort')
 let howToSort = 'asc'
 let sortByColumn = 'name'
@@ -30,7 +26,7 @@ sortBy.forEach((button) => {
     diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
   })
 })
-
+//------------lapas izvēle
 const setPage = document.querySelectorAll(".js-page");
 let rowsOnPage = 20;
 let currentPage = 1;
@@ -42,12 +38,14 @@ setPage.forEach((page) => {
   });
 });
 
+//------------filtrs
 const filterBy = document.querySelectorAll('.js-filter')
 filterBy.forEach((inputfield: HTMLInputElement) => {
   inputfield.addEventListener('input', (event) => {
     if(inputfield.value.length === 0){
       console.log('notīrīts');
-      diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
+      window.location.reload()
+      
     }
     if (inputfield.value.length < 3) {
       event.preventDefault();
@@ -68,16 +66,48 @@ filterBy.forEach((inputfield: HTMLInputElement) => {
       axios.get<Country[]>(`http://localhost:3004/countries?${filterColumn}_like=${inputfield.value}`).then(({ data }) => {
         console.log(data)
         clearTable()
-        createContryRow(data)    
+        createContryRow(data)   
       })
     }
   })
 })
 
-//apakšā dēļ mainīgajiem
+
+const createPagginator = (page: number, dataLenght: number) => {
+  const pageCount = Math.ceil(dataLenght/20);//data lenght /20 math
+
+  if(pageCount - page > 1) {
+  const pagintaorWrapper = document.querySelector('.js-paginator');
+  const buttonFirst = document.createElement('button');
+  buttonFirst.classList.add('js-page');
+  buttonFirst.textContent = currentPage.toString()
+  pagintaorWrapper.appendChild(buttonFirst)
+  
+  const buttonSecound = document.createElement('button');
+  buttonSecound.classList.add('js-page');
+  buttonSecound.textContent = String(currentPage +1 );
+  pagintaorWrapper.appendChild(buttonSecound)
+  
+  const buttonThereIsMorePages = document.createElement('button');
+  buttonThereIsMorePages.classList.add('js-page');
+  buttonThereIsMorePages.textContent = '...'
+  pagintaorWrapper.appendChild(buttonThereIsMorePages)
+  
+  const buttonlast = document.createElement('button');
+  buttonlast.classList.add('js-page');
+  buttonlast.textContent = pageCount.toString()
+  pagintaorWrapper.appendChild(buttonlast)
+  }
+}
+
+//------------------lapas ielāde
 const diplayTable = (page: number, rows: number, sortBy: string, sortOrder: string) => {
   axios.get<Country[]>(`http://localhost:3004/countries?_page=${page}&_limit=${rows}&_sort=${sortBy}&_order=${sortOrder}`).then(({ data }) => {
     createContryRow(data)
+  })
+  axios<Country[]>(`http://localhost:3004/countries`).then(({ data }) => {
+    const dataLengt = data.length
+    createPagginator(page, dataLengt)  
   })
 };
 //pirmā ielāde
@@ -87,27 +117,5 @@ diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
 
 
 
-// axios.get<Country[]>(`http://localhost:3004/countries`).then(({ data }) => {
-//     console.log(data.length)
-//     const createPagginator = () => {
-      
-
-//       if ((data.length >= 1) && (data.length >= 4)) {
-//         const pagginator = document.querySelector('.js-paginator');
-//         const button1 = document.createElement('button');
-//         button1.textContent = currentPage.toString()
-//         pagginator.appendChild(button1)
-
-
-//         const button2 = document.createElement('button');
-//         button1.textContent = currentPage.toString()
-//         pagginator.appendChild(button2)
-//       }
-//       }
-//     createPagginator()
-    
-
-    
-//   })
 
 
