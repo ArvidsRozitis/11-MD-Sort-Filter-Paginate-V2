@@ -1,17 +1,13 @@
 import axios from "axios";
 import { Country } from "./assets/modules/interfaces";
 import { createCountryRow } from "./assets/modules/create-rows";
-import { clearTable , clearPagination } from "./assets/modules/clear-functions";
+import { clearTable } from "./assets/modules/clear-functions";
 import { createPagginator } from "./assets/modules/create-paginator";
 // import { createActiveButton, createThereIsMorePagesButton, createButton, backToFirstPage } from "./assets/modules/create-pagination-buttons";
 
-// 1 = kā importētinterfaces iekš moduļa
-
-
 //jāsataisa, ka filtrs parāda 20 lapas
-// jāsatais, ka var paņemt lapu atkapaļ
 //jāsataisa, ka pēdējās lapas rādās aktive
-// jāsataisa pagination filtram/
+// jāsataisa pagination filtram
 // jānostilo filtrs
 // jānostilo tabulai, lai nelēkā izmēri
 
@@ -37,6 +33,8 @@ sortBy.forEach((button) => {
     diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
   })
 })
+//------------kārtošana
+
 
 //------------filtrs
 const filterBy = document.querySelectorAll('.js-filter')
@@ -44,8 +42,7 @@ filterBy.forEach((inputfield: HTMLInputElement) => {
   inputfield.addEventListener('input', (event) => {
     if(inputfield.value.length === 0){
       console.log('notīrīts');
-      window.location.reload()
-      
+      window.location.reload() 
     }
     if (inputfield.value.length < 3) {
       event.preventDefault();
@@ -70,7 +67,6 @@ const diplayTable = (page: number, rows: number, sortBy: string, sortOrder: stri
   axios<Country[]>(`http://localhost:3004/countries`).then(({ data }) => {
     const dataLength = data.length
     console.log(data.length)
-    
     createPagginator(page, dataLength)
   })
 };
