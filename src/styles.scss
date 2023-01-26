@@ -32,8 +32,8 @@ body {
   cursor: pointer; 
 }
 .table__content-row {
-  
   height: 1.5rem;
+  font-size: 0.725rem;
   transition: height 0.3s;
 
   &--bg-lightgrey{
@@ -54,4 +54,32 @@ body {
   text-align: left;
   border: 1px solid rgb(110, 110, 110);
   text-indent: 8px;
+}
+.table__paginator {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end; 
+  justify-content: flex-end; 
+  padding: 10px 0;
+}
+
+.table__page-button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  min-width: 20px;
+  padding: 4px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 1px;
+  &--active {
+    background-color: rgb(43, 43, 43);
+    color: white;
+  }
+  &:hover {
+    background-color: grey;
+  }
 }
