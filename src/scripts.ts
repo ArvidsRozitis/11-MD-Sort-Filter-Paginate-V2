@@ -1,10 +1,18 @@
 import axios from "axios";
 import { Country } from "./assets/modules/interfaces";
 import { createCountryRow } from "./assets/modules/create-rows";
-import { clearTable } from "./assets/modules/clear-table";
+import { clearTable , clearPagination } from "./assets/modules/clear-functions";
+import { createActiveButton, createThereIsMorePagesButton, createButton } from "./assets/modules/create-pagination-buttons";
 
 // 1 = kā importētinterfaces iekš moduļa
 
+
+//jāsataisa, ka filtrs parāda 20 lapas
+// jāsatais, ka var paņemt lapu atkapaļ
+//jāsataisa, ka pēdējās lapas rādās aktive
+// jāsataisa pagination filtram/
+// jānostilo filtrs
+// jānostilo tabulai, lai nelēkā izmēri
 
 
 //----globālie pagaidām
@@ -65,37 +73,15 @@ filterBy.forEach((inputfield: HTMLInputElement) => {
 
 const createPagginator = (page: number, dataLenght: number) => {
   let rowsOnPage = 20;
-  const pageCount = Math.ceil(dataLenght/20);//data lenght /20 math
+  const pageCount = Math.ceil(dataLenght/20);
 
-  if(pageCount - page > 2) {
-    const pagintaorWrapper = document.querySelector('.js-paginator');
-    pagintaorWrapper.innerHTML= ''
-
-    const buttonFirst = document.createElement('button');
-    buttonFirst.classList.add('table__page-button');
-    buttonFirst.classList.add('js-page');
-    buttonFirst.classList.add('table__page-button--active');
-    buttonFirst.textContent = currentPage.toString()
-    pagintaorWrapper.appendChild(buttonFirst)
-    
-    const buttonSecound = document.createElement('button');
-    buttonSecound.classList.add('table__page-button');
-    buttonSecound.classList.add('js-page');
-    buttonSecound.textContent = String(currentPage +1 );
-    pagintaorWrapper.appendChild(buttonSecound)
-    
-    const buttonThereIsMorePages = document.createElement('button');
-    buttonThereIsMorePages.classList.add('table__page-button');
-    buttonThereIsMorePages.classList.add('js-page');
-    buttonThereIsMorePages.textContent = '...'
-    buttonThereIsMorePages.setAttribute('disabled', 'disabled')
-    pagintaorWrapper.appendChild(buttonThereIsMorePages)
-    
-    const buttonlast = document.createElement('button');
-    buttonlast.classList.add('table__page-button');
-    buttonlast.classList.add('js-page');
-    buttonlast.textContent = pageCount.toString()
-    pagintaorWrapper.appendChild(buttonlast)
+  if((pageCount - page > 2) && (page === 1)) {
+    const paginationWrapper = document.querySelector('.js-paginator');
+    clearPagination();
+    createActiveButton(currentPage, paginationWrapper);
+    createButton(currentPage+1, paginationWrapper);
+    createThereIsMorePagesButton(paginationWrapper);
+    createButton(pageCount, paginationWrapper);
     
     //----------------jāizness funkcijā!!!
     const setPage = document.querySelectorAll(".js-page");
@@ -107,33 +93,35 @@ const createPagginator = (page: number, dataLenght: number) => {
       });
     });
 
+  } else if((pageCount - page > 2) && (page > 1)){
+    const paginationWrapper = document.querySelector('.js-paginator');
+    clearPagination();
+    createButton(currentPage-1, paginationWrapper);
+    createActiveButton(currentPage, paginationWrapper);
+    createButton(currentPage+1, paginationWrapper);
+    createThereIsMorePagesButton(paginationWrapper);
+    createButton(pageCount, paginationWrapper);
+
+     //----------------jāizness funkcijā!!!
+     const setPage = document.querySelectorAll(".js-page");
+     setPage.forEach((page) => {
+       page.addEventListener("click", () => {
+       currentPage = Number(page.textContent);
+       clearTable()
+       diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
+       });
+     });
+
+
   } else if (pageCount - page < 4) {
-    const pagintaorWrapper = document.querySelector('.js-paginator');    
-    pagintaorWrapper.innerHTML= ''
+    const paginationWrapper = document.querySelector('.js-paginator');    
+    clearPagination();
 
-    const buttonOneback = document.createElement('button');    
-    buttonOneback.classList.add('table__page-button');
-    buttonOneback.classList.add('js-page');
-    buttonOneback.textContent = String(pageCount -3 );
-    pagintaorWrapper.appendChild(buttonOneback)
+    createButton(pageCount-3, paginationWrapper);
+    createButton(pageCount-2, paginationWrapper);
+    createButton(pageCount-1, paginationWrapper);
+    createButton(pageCount, paginationWrapper);
 
-    const buttonFirst = document.createElement('button');
-    buttonFirst.classList.add('table__page-button');
-    buttonFirst.classList.add('js-page');
-    buttonFirst.textContent = String(pageCount -2 );
-    pagintaorWrapper.appendChild(buttonFirst)
-    
-    const buttonSecound = document.createElement('button');
-    buttonSecound.classList.add('table__page-button');
-    buttonSecound.classList.add('js-page');
-    buttonSecound.textContent = String(pageCount -1 );
-    pagintaorWrapper.appendChild(buttonSecound)
-
-    const buttonlast = document.createElement('button');
-    buttonlast.classList.add('table__page-button');
-    buttonlast.classList.add('js-page');
-    buttonlast.textContent = pageCount.toString()
-    pagintaorWrapper.appendChild(buttonlast)    
 
     //----------------jāizness funkcijā!!!
     const setPage = document.querySelectorAll(".js-page");
