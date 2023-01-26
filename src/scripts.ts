@@ -2,7 +2,8 @@ import axios from "axios";
 import { Country } from "./assets/modules/interfaces";
 import { createCountryRow } from "./assets/modules/create-rows";
 import { clearTable , clearPagination } from "./assets/modules/clear-functions";
-import { createActiveButton, createThereIsMorePagesButton, createButton } from "./assets/modules/create-pagination-buttons";
+import { createPagginator } from "./assets/modules/create-paginator";
+// import { createActiveButton, createThereIsMorePagesButton, createButton, backToFirstPage } from "./assets/modules/create-pagination-buttons";
 
 // 1 = kā importētinterfaces iekš moduļa
 
@@ -48,99 +49,18 @@ filterBy.forEach((inputfield: HTMLInputElement) => {
     }
     if (inputfield.value.length < 3) {
       event.preventDefault();
-    } else{
-      let filterColumn = 'name'
-      console.log(inputfield.value)
-
-      if(inputfield.classList.contains('js-filter-country-name')) {
-        filterColumn = 'name'      
-      } else if(inputfield.classList.contains('js-filter-country-capital')) {
-        filterColumn = 'capital'
-      } else if(inputfield.classList.contains('js-filter-country-currency-name')) {
-        filterColumn = 'currency.name'
-      } else if(inputfield.classList.contains('js-filter-country-language-name')){
-        filterColumn = 'language.name'
-
-      }
-      axios.get<Country[]>(`http://localhost:3004/countries?${filterColumn}_like=${inputfield.value}`).then(({ data }) => {
-        console.log(data)
+    } else {
+      
+      axios.get<Country[]>(`http://localhost:3004/countries?${inputfield.id}_like=${inputfield.value}`).then(({ data }) => {
+        console.log(data) 
         clearTable()
         createCountryRow(data)   
       })
     }
   })
 })
+//------------filtrs
 
-const createPagginator = (page: number, dataLenght: number) => {
-  let rowsOnPage = 20;
-  const pageCount = Math.ceil(dataLenght/20);
-
-  if((pageCount - page > 2) && (page === 1)) {
-    const paginationWrapper = document.querySelector('.js-paginator');
-    clearPagination();
-    createActiveButton(currentPage, paginationWrapper);
-    createButton(currentPage+1, paginationWrapper);
-    createThereIsMorePagesButton(paginationWrapper);
-    createButton(pageCount, paginationWrapper);
-    
-    //----------------jāizness funkcijā!!!
-    const setPage = document.querySelectorAll(".js-page");
-    setPage.forEach((page) => {
-      page.addEventListener("click", () => {
-      currentPage = Number(page.textContent);
-      clearTable()
-      diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
-      });
-    });
-
-  } else if((pageCount - page > 2) && (page > 1)){
-    const paginationWrapper = document.querySelector('.js-paginator');
-    clearPagination();
-    createButton(currentPage-1, paginationWrapper);
-    createActiveButton(currentPage, paginationWrapper);
-    createButton(currentPage+1, paginationWrapper);
-    createThereIsMorePagesButton(paginationWrapper);
-    createButton(pageCount, paginationWrapper);
-
-     //----------------jāizness funkcijā!!!
-     const setPage = document.querySelectorAll(".js-page");
-     setPage.forEach((page) => {
-       page.addEventListener("click", () => {
-       currentPage = Number(page.textContent);
-       clearTable()
-       diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
-       });
-     });
-
-
-  } else if (pageCount - page < 4) {
-    const paginationWrapper = document.querySelector('.js-paginator');    
-    clearPagination();
-
-    createButton(pageCount-3, paginationWrapper);
-    createButton(pageCount-2, paginationWrapper);
-    createButton(pageCount-1, paginationWrapper);
-    createButton(pageCount, paginationWrapper);
-
-
-    //----------------jāizness funkcijā!!!
-    const setPage = document.querySelectorAll(".js-page");
-    setPage.forEach((page) => {
-      page.addEventListener("click", () => {
-        currentPage = Number(page.textContent);
-        clearTable()
-        diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
-        
-        console.log(page)
-      });
-    });
-  } 
-
-
-
-
-
-}
 
 //------------------lapas ielāde
 const diplayTable = (page: number, rows: number, sortBy: string, sortOrder: string) => {
@@ -148,10 +68,14 @@ const diplayTable = (page: number, rows: number, sortBy: string, sortOrder: stri
     createCountryRow(data)
   })
   axios<Country[]>(`http://localhost:3004/countries`).then(({ data }) => {
-    const dataLengt = data.length
-    createPagginator(page, dataLengt)  
+    const dataLength = data.length
+    console.log(data.length)
+    
+    createPagginator(page, dataLength)
   })
 };
 
 //pirmā ielāde
 diplayTable(currentPage, rowsOnPage, sortByColumn, howToSort);
+
+export {diplayTable}
